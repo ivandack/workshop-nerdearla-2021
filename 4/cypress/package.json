@@ -1,0 +1,15 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "BACKEND_ENDPOINT=http://localhost:8000 CYPRESS_BASE_URL=http://localhost:3000 cypress open",
+    "cypress": "BACKEND_ENDPOINT=http://localhost:8000 CYPRESS_BASE_URL=http://localhost:3000 cypress"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.6.0"
+  }
+}

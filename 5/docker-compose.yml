@@ -1,0 +1,21 @@
+version: "3.6"
+
+services:
+  proxy:
+    build:
+      context: ./reverse-proxy
+      args:
+        - BACKEND=http://backend:8000
+    image: nerdearla-docker/proxy_5
+    depends_on:
+      - backend
+    ports:
+      - 8001:80
+
+  backend:
+    build: ./backend
+    image: nerdearla-docker/backend_5
+    environment:
+      PORT: 8000
+    volumes:
+      - ./backend/index.js:/app/index.js

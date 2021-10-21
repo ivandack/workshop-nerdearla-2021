@@ -1,0 +1,18 @@
+version: "3.6"
+
+services:
+  database:
+    ports:
+      - 27017:27017
+
+  backend:
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+
+  frontend:
+    ports:
+      - 3000:80
+    depends_on:
+      - backend

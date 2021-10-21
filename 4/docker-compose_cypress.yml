@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+  database:
+    volumes: []
+
+  backend:
+    build: ../3/backend
+
+  frontend:
+    build:
+      context: ../3/frontend
+      args:
+        REACT_APP_BACKEND: http://backend:8000
+    image: nerdearla-docker/frontend:cypress
+
+  cypress:
+    image: "cypress/included:8.6.0"
+    depends_on:
+      - frontend
+    environment:
+      CYPRESS_BASE_URL: http://frontend:80
+      BACKEND_ENDPOINT: http://backend:8000
+      CYPRESS_VIDEO: 'false'
+      CYPRESS_SCREENSHOTS: 'false'
+    working_dir: /e2e
+    volumes:
+      - ../4/cypress/cypress.json:/e2e/cypress.json
+      - ../4/cypress/cypress:/e2e/cypress

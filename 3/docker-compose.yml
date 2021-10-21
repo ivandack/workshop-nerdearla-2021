@@ -1,0 +1,25 @@
+version: "3.6"
+
+services:
+  database:
+    image: mongo:4.4.9-focal
+    volumes:
+      - mongodbdata:/data/db
+
+  backend:
+    build: ./backend
+    image: nerdearla-docker/backend
+    environment:
+      PORT: 8000
+      DB_SERVER: database:27017
+      DB_NAME: todo
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        REACT_APP_BACKEND: http://localhost:8000
+    image: nerdearla-docker/frontend
+
+volumes:
+  mongodbdata:
