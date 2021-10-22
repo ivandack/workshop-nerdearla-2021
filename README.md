@@ -9,35 +9,35 @@ Cada carpeta carpeta contiene ejemplos de una forma particular de usar Docker, y
 ### Todos los ejemplos juntos
 
 ```sh
-docker image pull golang:1.17.2-alpine python:3.9.7-alpine nginx:1.21.3-alpine node:14.18.1-alpine mongo:4.4.9-focal cypress/included:8.6.0
+echo golang:1.17.2-alpine python:3.9.7-alpine nginx:1.21.3-alpine node:14.18.1-alpine mongo:4.4.9-focal cypress/included:8.6.0 | xargs -n1 docker image pull
 ```
 
 ### Ejemplo 1
 
 ```sh
-docker image pull golang:1.17.2-alpine python:3.9.7-alpine 
+echo golang:1.17.2-alpine python:3.9.7-alpine | xargs -n1 docker image pull
 ```
 
 ### Ejemplo 2
 
 ```sh
-docker image pull python:3.9.7-alpine nginx:1.21.3-alpine
+echo python:3.9.7-alpine nginx:1.21.3-alpine | xargs -n1 docker image pull
 ```
 
 ### Ejemplo 3
 
 ```sh
-docker image pull node:14.18.1-alpine nginx:1.21.3-alpine mongo:4.4.9-focal
+echo node:14.18.1-alpine nginx:1.21.3-alpine mongo:4.4.9-focal | xargs -n1 docker image pull
 ```
 
 ### Ejemplo 4
 
 ```sh
-docker image pull node:14.18.1-alpine nginx:1.21.3-alpine mongo:4.4.9-focal cypress/included:8.6.0
+echo node:14.18.1-alpine nginx:1.21.3-alpine mongo:4.4.9-focal cypress/included:8.6.0 | xargs -n1 docker image pull
 ```
 
 ### Ejemplo 5
 
 ```sh
-docker image pull node:14.18.1-alpine nginx:1.21.3-alpine
+echo node:14.18.1-alpine nginx:1.21.3-alpine | xargs -n1 docker image pull
 ```
