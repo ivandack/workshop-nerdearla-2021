@@ -1,6 +1,6 @@
 # Docker a lo MacGyver (Workshop Nerdear.la 2021)
 
-Código de ejemplo para el workshop "Docker a lo MacGyver" en Nerdear.la 2021.
+Código de ejemplo para el workshop "Docker a lo MacGyver" en Nerdear.la 2021 ([link al video](https://www.youtube.com/watch?v=xt1g0RW4Xjk)).
 
 ## Imágenes de Docker usadas
 
